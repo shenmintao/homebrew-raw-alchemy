@@ -52,9 +52,11 @@ that release's `SHA256SUMS.txt`; do not use the checksum of the checksum file.
 The URL derives the tag and asset name from `version`. Update the compatibility
 Cask in the application repository while its legacy tap remains supported.
 
-Validate on a supported Mac before publishing:
+Validate on a supported Mac before publishing. Explicitly trust the Cask before
+the developer checks load it from this third-party tap:
 
 ```bash
+brew trust --cask shenmintao/raw-alchemy/raw-alchemy-studio
 brew style --cask shenmintao/raw-alchemy/raw-alchemy-studio
 brew audit --cask shenmintao/raw-alchemy/raw-alchemy-studio
 brew fetch --cask shenmintao/raw-alchemy/raw-alchemy-studio
